@@ -1,0 +1,13 @@
+#colorpad {
+    transition: background 1s, color 1s;
+ }
+ * {
+    text-shadow: none;
+ }
+ #box {
+    width: 100vw;
+    height: 85vh;
+    font-family: "Vernada";
+    padding: 0;
+    margin: 0;
+ }

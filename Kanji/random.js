@@ -4,21 +4,7 @@ $(document).ready(function () {
         setRandomColor();
         randomWords();
     });
-    // $(document).click(function () {
-    //     setRandomColor();
-    //     randomWords();
-    // });
-    // $(document).on({
-    //     'touchend': function () {
-    //         setRandomColor();
-    //         randomWords();
-    //     }
-    // });
-    // $(document).on("tap", function () {
-    //     setRandomColor();
-    //     randomWords();
-    // });
-    $(document).on( "swipeleft",function () {
+    $(document).on("swipeleft", function () {
         setRandomColor();
         randomWords();
     });
@@ -61,26 +47,24 @@ function isDone(from, to) {
     return getMinTime(from, to) > 0;
 }
 
+
+const from = parseInt($.urlParam('from'), 10) || 0;
+const to = parseInt($.urlParam('to'), 10) || Words.length - 1;
+const type = $.urlParam('type') || 'none';
+
 function randomWords() {
-    const from = parseInt($.urlParam('from'), 10) || 0;
-    const to = parseInt($.urlParam('to'), 10) || Words.length;
     let myNumber = Math.floor(Math.random() * (to - from + 1)) + from;
+
     while (Words[myNumber].time > getMinTime(from, to)) {
         myNumber = Math.floor(Math.random() * (to - from + 1)) + from;
     }
     document.getElementsByTagName("p")[0].innerHTML = "Press any key to random<br />" + count++ + " times - " + myNumber + " in [" + from + "; " + to + "] - " + ++Words[myNumber].time + " times for this word<br />DONE " + getMinTime(from, to) + " TIMES";
-    const type = $.urlParam('type') || 'none';
-    if (type == 'english|kanji') {
-        document.getElementById("box").innerHTML = Words[myNumber].meaning + "<br />" + Words[myNumber].kanji;
-        document.getElementById("small").innerHTML =  Words[myNumber].kana;
-    } else if (type == 'english') {
+
+    if (type == 'vi') {
         document.getElementById("box").innerHTML = Words[myNumber].meaning;
-        document.getElementById("small").innerHTML =  Words[myNumber].kana;
-    } else if (type == 'kana|kanji') {
-        document.getElementById("box").innerHTML = Words[myNumber].kanji + "<br />" + Words[myNumber].kana;
-        document.getElementById("small").innerHTML = Words[myNumber].meaning;
-    } else {
-        document.getElementById("box").innerHTML = Words[myNumber].kana;
+        document.getElementById("small").innerHTML = Words[myNumber].kanji;
+    } else if (type == 'kanji') {
+        document.getElementById("box").innerHTML = Words[myNumber].kanji;
         document.getElementById("small").innerHTML = Words[myNumber].meaning;
     }
     var width = $('#box').width(),

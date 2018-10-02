@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+   <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+
+   <link rel="stylesheet" href="app.css">
+   <script src="model.js"></script>
+   <script src="fetch.js"></script>
+   <script src="random.js"></script>
+</head>
+<body onload="
+setRandomColor();
+randomWords();">
+   <center id="colorpad" style="height: 100vh">
+      <p></p>
+      <div id="box">Loading</div>
+      <p id="small" style="font-size:13px"></p>
+   </center>
+</body>
+</html>

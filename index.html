@@ -4,17 +4,30 @@
 <head>
     <meta charset="utf-8">
     <title>Vocabulary N5</title>
-    <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
 </head>
 <body>
-    <form action="app.html" method="get">
-        From: <input name="from" type="number" autofocus/> <br>
-        To: <input name="to" type="number" /> <br>
+    <h2>Vocabulary</h2>
+    <form action="Vocabulary/app.html" method="get">
+        From: <input name="from" type="number" autofocus min=0 max=726 /> <br>
+        To: <input name="to" type="number" min=0 max=726 /> <br>
         Show: <select name="type">
             <option value="english|kanji">English vs. Kanji</option>
             <option value="english">English</option>
             <option value="kana">Kana</option>
             <option value="kana|kanji">Kana vs. Kanji</option>
+        </select> <br>
+        <input type="submit" />
+    </form>
+    <hr>
+    <h2>Kanji</h2>
+    <form action="Kanji/kanji.html" method="get">
+        <!-- From: <input name="from" type="number" min=0 max=726 /> <br> -->
+        <!-- To: <input name="to" type="number" /min=0 max=726> <br> -->
+        Show: <select name="type">
+            <option value="kanji">Kanji</option>
+            <option value="vi">Vietnamese</option>
+            <!-- <option value="on">Âm Hán-Nhật</option>
+            <option value="kun">Thuần Nhật</option> -->
         </select> <br>
         <input type="submit" />
     </form>
